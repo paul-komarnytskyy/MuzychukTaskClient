@@ -1,0 +1,11 @@
+C:\Users\Polus\source\repos\OnlineShop\Core\bin\Debug\Core.dll
+C:\Users\Polus\source\repos\OnlineShop\Core\bin\Debug\Core.pdb
+C:\Users\Polus\source\repos\OnlineShop\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Users\Polus\source\repos\OnlineShop\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\Polus\source\repos\OnlineShop\Core\obj\Debug\Core.dll
+C:\Users\Polus\source\repos\OnlineShop\Core\obj\Debug\Core.pdb
+C:\Users\Polus\source\repos\OnlineShop\Core\bin\Debug\Core.dll.config
+C:\Users\Polus\source\repos\OnlineShop\Core\bin\Debug\EntityFramework.dll
+C:\Users\Polus\source\repos\OnlineShop\Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Polus\source\repos\OnlineShop\Core\bin\Debug\EntityFramework.xml
+C:\Users\Polus\source\repos\OnlineShop\Core\bin\Debug\EntityFramework.SqlServer.xml

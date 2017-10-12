@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7936bce1ea84c969f7645f4e6e1db9a" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineShopModel.ItemCategory" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopModel.Item" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopModel.OrderItem" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopModel.Order" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopModel.Role" Width="1.5" PointX="1.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopModel.Table" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShopModel.User" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="OnlineShopModel.FK__ItemCateg__Paren__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopModel.FK__Items__CategoryI__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopModel.FK__OrderItem__ItemI__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopModel.FK__OrderItem__Order__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopModel.FK__Orders__UserID__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShopModel.UserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
