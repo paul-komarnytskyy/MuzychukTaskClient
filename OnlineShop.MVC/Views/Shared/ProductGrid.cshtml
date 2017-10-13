@@ -1,0 +1,9 @@
+﻿@using System.Collections.Generic;
+@model List<Core.Model.DTO.Item>
+
+<div class="items-grid">
+    @foreach (var item in Model)
+    {
+        @Html.Partial("ProductGridView", item)
+    }
+</div>
