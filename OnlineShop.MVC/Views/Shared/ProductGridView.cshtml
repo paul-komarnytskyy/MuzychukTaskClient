@@ -1,6 +1,6 @@
 ﻿@model Core.Model.DTO.Item
 
 <div class="product-item">
-    @Html.DisplayFor(model => model.Name)
+    @Html.ActionLink(Model.Name, "Item", "Items", new { ID = Model.ID }, null)
     @Html.DisplayFor(model => model.Price)
 </div>
