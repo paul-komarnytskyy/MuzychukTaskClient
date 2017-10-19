@@ -14,6 +14,8 @@ namespace Core.DAL.Repositories.Interfaces
 
         bool UpdateCategory(ItemCategory category);
 
+        IEnumerable<ItemCategory> GetCategoriesForCategory(int categoryID);
+
         bool Save();
     }
 }
