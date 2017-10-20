@@ -1,6 +1,7 @@
 ﻿@model Core.Model.DTO.Item
 
-<div class="product-item">
-    @Html.ActionLink(Model.Name, "Item", "Items", new { ID = Model.ID }, null)
-    @Html.DisplayFor(model => model.Price)
-</div>
+<li>
+    <img src="@Url.Content(Model.ImageURL)" alt="Image" width ="100px" height="100px" />
+    <h4>@Model.Name</h4>
+    <p>@Model.Price UAH</p>
+</li>

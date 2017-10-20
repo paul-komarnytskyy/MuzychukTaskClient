@@ -23,16 +23,10 @@ textarea {
     max-width: 280px;
 }
 
-
-.items-grid {
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-gap: 10px;
-    background-color: #fff;
-    color: #444;
-}
-
-.product-item {
-    background-color: #fff;
-    color: #444;
+ul.items-grid li {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
 }
