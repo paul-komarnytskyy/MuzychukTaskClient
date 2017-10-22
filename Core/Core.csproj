@@ -68,6 +68,7 @@
     <Compile Include="DAL\Repositories\Interfaces\IOrderRepository.cs" />
     <Compile Include="DAL\Repositories\Interfaces\IUserRepository.cs" />
     <Compile Include="DAL\Repositories\UnitOfWork.cs" />
+    <Compile Include="Model\DTO\BasicCategory.cs" />
     <Compile Include="Model\Item.cs">
       <DependentUpon>OnlineShopModel.tt</DependentUpon>
     </Compile>

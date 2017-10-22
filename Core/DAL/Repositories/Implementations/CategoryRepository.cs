@@ -32,10 +32,23 @@ namespace Core.DAL.Repositories.Implementations
 
             return false;
         }
-        
+
         public IEnumerable<ItemCategory> GetCategories()
         {
             return context.ItemCategories.ToList();
+        }
+
+        public IEnumerable<ItemCategory> GetCategoriesForCategory(int categoryID)
+        {
+            var category = GetCategories().FirstOrDefault(it => it.ID == categoryID);
+            var categories = new List<ItemCategory>();
+            categories.Add(category);
+            foreach (var child in category.ItemCategories1)
+            {
+                categories.AddRange(GetCategoriesForCategory(child.ID));
+            }
+
+            return categories;
         }
 
         public bool Save()
