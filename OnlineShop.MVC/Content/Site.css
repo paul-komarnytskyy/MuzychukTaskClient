@@ -30,3 +30,6 @@ ul.items-grid li {
     *display: inline;
     *zoom: 1;
 }
+.margin-bottom{
+    margin-bottom:35px;
+}

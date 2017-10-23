@@ -1,5 +1,42 @@
-﻿@using System.Collections.Generic
+﻿@*@using System.Collections.Generic
 
 @model List<Core.Model.DTO.Item>
 
-@Html.Partial("ProductGrid", Model)
+@Html.Partial("ProductGrid", Model)*@
+
+@*<link href="~/Content/Site.css" rel="stylesheet" />*@
+<div ng-app="itemsModule" style="margin:5px 5px 5px 5px">
+    <div ng-controller="itemsController as vm" class="container">
+        <select ng-model="itemsPerPage" style="width:100px;" class="form-control margin-bottom" ng-change="vm.setPage(vm.pager.currentPage, itemsPerPage)" ng-options="x for x in vm.showItemsPerPage"></select>
+        <ul class="items-grid">
+            <li ng-repeat="item in vm.items">
+                <img src="{{item.ImageURL}}" class="img-responsive" style="width:100%" alt="Image">
+                <h4>{{item.Name}}</h4>
+                <p>{{item.Price}} UAH</p>
+            </li>
+        </ul>
+        <ul class="pagination">
+            <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                <a ng-click="vm.setPage(1, itemsPerPage)">First</a>
+            </li>
+            <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                <a ng-click="vm.setPage(vm.pager.currentPage - 1, itemsPerPage)">Previous</a>
+            </li>
+            <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
+                <a ng-click="vm.setPage(page, itemsPerPage)">{{page}}</a>
+            </li>
+            <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                <a ng-click="vm.setPage(vm.pager.currentPage + 1, itemsPerPage)">Next</a>
+            </li>
+            <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                <a ng-click="vm.setPage(vm.pager.totalPages, itemsPerPage)">Last</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-route.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/lodash.min.js"></script>
+<script src="~/Scripts/ItemsController.js"></script>
