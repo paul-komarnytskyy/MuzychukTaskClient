@@ -1,0 +1,32 @@
+﻿
+<div ng-app="registerModule" style="margin:5px 5px 5px 5px">
+    <div ng-controller="registerController" class="container">
+        <form novalidate name="registerForm" ng-submit="RegisterUser(UserData)">
+            <div style="color:red">{{message}}</div>
+            <div class="row">
+                <label class="text-primary">Email:</label>
+                <input class="form-control" type="email" ng-model="UserData.Email" name="sEmailID" ng-class="submitted?'ng-dirty':''" />
+                <span class="error" ng-show="(registerForm.sEmailID.$dirty || submitted) && registerForm.sEmailID.$error.email">Email ID not valid!</span>
+            </div>
+            <div class="row padding-top">
+                <label class="text-primary">Password:</label>
+                <input class="form-control" type="password" ng-model="UserData.Password" name="sPasswordID" ng-class="submitted?'ng-dirty':''" required autofocus/>
+                <span class="error" ng-show="(registerForm.sPasswordID.$dirty || submitted) && registerForm.sPasswordID.$error.password">Password is required!</span>
+            </div>
+            <div class="row padding-top">
+                <label class="text-primary">Confirm Password:</label>
+                <input class="form-control" type="password" ng-model="UserData.ConfirmPassword" name="sConfirmPasswordID" ng-class="submitted?'ng-dirty':''" required autofocus />
+                <span class="error"  ng-show="(registerForm.sConfirmPasswordID.$dirty || submitted) && registerForm.sConfirmPasswordID.$error.confirmPassword">Password is required!</span>
+            </div>
+            <div class="row padding-top">
+                <input class="btn btn-primary" type="submit" value="Register" />
+                <a href="~/Home/Login" class="padding-left">Log In</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-route.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/lodash.min.js"></script>
+<script src="~/Scripts/RegisterController.js"></script>

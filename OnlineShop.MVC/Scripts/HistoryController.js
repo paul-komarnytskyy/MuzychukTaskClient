@@ -1,16 +1,11 @@
 ﻿
-var app = angular.module("itemsModule", ["ngRoute"]);
+var app = angular.module("historyModule", ["ngRoute"]);
 
-app.service("itemsService", function ($http) {
+app.service("historyService", function ($http) {
 
-    //get All Items
-    this.getItems = function () {
-        return $http.get("/Home/GetItems");
-    };
 
     //load User History
-    this.loadHistory = function()
-    {
+    this.loadHistory = function () {
         return $http.get("/Home/LoadHistory");
     }
 
@@ -18,7 +13,7 @@ app.service("itemsService", function ($http) {
         debugger;
         currentPage = currentPage || 1;
 
-        pageSize = pageSize || 6;
+        pageSize = pageSize || 5;
 
         var totalPages = Math.ceil(totalItems / pageSize);
 
@@ -28,7 +23,7 @@ app.service("itemsService", function ($http) {
             startPage = 1;
             endPage = totalPages;
         } else {
-           //  more than 10 total pages so calculate start and end pages
+            //  more than 10 total pages so calculate start and end pages
             if (currentPage <= 6) {
                 startPage = 1;
                 endPage = 10;
@@ -61,29 +56,17 @@ app.service("itemsService", function ($http) {
 });
 
 
-app.controller("itemsController", function ($scope, itemsService) {
+app.controller("historyController", function ($scope, historyService) {
     var vm = this;
     vm.dummyItems = {};
     vm.pager = {};
     vm.setPage = setPage;
 
-    vm.showItemsPerPage = [6, 10, 50, 100];
-   
+    vm.showItemsPerPage = [5, 10, 50, 100];
+
     initController();
 
-    function GetAllItems() {
-        var getData = itemsService.getItems();
-
-        getData.then(function (itm) {
-            $scope.items = itm.data;
-            vm.dummyItems = itm.data;
-        }, function (itm) {
-
-        });
-    }
-
-    function LoadHistory()
-    {
+    function LoadHistory() {
         var historyItems = itemsService.loadHistory();
 
         historyItems.then(function (itm) {
@@ -93,7 +76,7 @@ app.controller("itemsController", function ($scope, itemsService) {
 
     function initController() {
         // initialize to page 1
-        $scope.itemsPerPage = 6;
+        $scope.itemsPerPage = 5;
         vm.setPage(1);
     }
 
@@ -103,18 +86,17 @@ app.controller("itemsController", function ($scope, itemsService) {
         }
         vm.pageSize = pageSize;
 
-        var getData = itemsService.getItems();
-        getData.then(function (data)
-        {
+        var getData = historyService.loadHistory();
+        getData.then(function (data) {
             debugger;
-            
-            vm.dummyItems =angular.fromJson(data).data;
 
-            vm.pager = itemsService.getPager(vm.dummyItems.length, page, vm.pageSize);
+            vm.dummyItems = angular.fromJson(data).data;
 
-            
+            vm.pager = historyService.getPager(vm.dummyItems.length, page, vm.pageSize);
+
+
             //// get current page of items
-            vm.items = vm.dummyItems.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
+            vm.historyItems = vm.dummyItems.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
         });
     }
 })
